@@ -2,7 +2,7 @@
 	  <div class="panel-body">
 	    <div class="row">
 	      <div class="col-md-4">
-	        <%= image_tag @movie.image, class: "width: 100%" %>
+	        <%= image_tag @movie.image, style: "width: 100%" %>
 					
 					<div class="star-rating" data-score= <%= @avg_review %> ></div>
 	        <em><%= "#{@reviews.length} reviews" %></em>
@@ -48,7 +48,7 @@
 	        <% else %>
 	          <% @reviews.each do |review| %>
 	            <div class="reviews">
-	              <p><%= review.rating %></p>
+	              <div class="star-rating" data-score= <%= review.rating %> ></div>
 	              <p><%= review.comment %></p>
 	            </div>
 	          <% end %>
