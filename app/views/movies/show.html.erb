@@ -48,7 +48,7 @@
 	        <% else %>
 	          <% @reviews.each do |review| %>
 	            <div class="reviews">
-	              <div id="star-rating" data-score= <%= review.rating %> ></div>
+	              <div class="star-rating" data-score= <%= review.rating %> ></div>
 	              <p><%= review.comment %></p>
 	            </div>
 	          <% end %>
@@ -72,5 +72,13 @@
 	  $('#star-rating').raty({
 	    path: '/jq/',
 	    scoreName: 'review[rating]'
+	  });
+		
+		$('.star-rating').raty({
+	      path: '/assets/',
+	      readOnly: true,
+	      score: function() {
+	            return $(this).attr('data-score');
+	    }
 	  });
 	</script>
