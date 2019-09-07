@@ -68,6 +68,7 @@ end
 group :production do
   gem 'pg'
 end
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
 
 gem "aws-sdk-s3", require: false
+gem 'devise-bootstrap-views'
